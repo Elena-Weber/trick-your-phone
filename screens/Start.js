@@ -5,8 +5,14 @@ function Start() {
     return (
         <View style={styles.inputContainer}>
             <TextInput style={styles.input} maxLength={2} keyboardType="number-pad" autoCapitalize='none' autoCorrect={false} />
-            <MainBtn>Reset</MainBtn>
-            <MainBtn>Confirm</MainBtn>
+            <View style={styles.buttonsContainer}>
+                <View style={styles.button}>
+                    <MainBtn>Reset</MainBtn>
+                </View>
+                <View style={styles.button}>
+                    <MainBtn>Confirm</MainBtn>
+                </View>
+            </View>
         </View>
     )
 }
@@ -24,7 +30,9 @@ const styles = StyleSheet.create({
         shadowColor: 'black', // shadow for iPhone, 4 attributes
         shadowOffset: {width: 0, height: 3},
         shadowRadius: 6,
-        shadowOpacity: 0.25
+        shadowOpacity: 0.25,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     input: {
         borderBottomColor: 'red',
@@ -36,5 +44,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         width: 150,
         textAlign: 'center'
+    },
+    buttonsContainer: {
+        flexDirection: 'row'
+    },
+    button: {
+        flex: 1
     }
 });
