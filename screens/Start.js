@@ -4,7 +4,7 @@ import MainBtn from '../components/MainBtn';
 function Start() {
     return (
         <View style={styles.inputContainer}>
-            <TextInput />
+            <TextInput style={styles.input} maxLength={2} keyboardType="number-pad" autoCapitalize='none' autoCorrect={false} />
             <MainBtn>Reset</MainBtn>
             <MainBtn>Confirm</MainBtn>
         </View>
@@ -15,7 +15,6 @@ export default Start;
 
 const styles = StyleSheet.create({
     inputContainer: {
-        // flex: 1,
         padding: 20,
         marginTop: 100,
         marginHorizontal: 24,
@@ -26,5 +25,16 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 3},
         shadowRadius: 6,
         shadowOpacity: 0.25
+    },
+    input: {
+        borderBottomColor: 'red',
+        borderBottomWidth: 2,
+        height: 50,
+        fontSize: 30,
+        color: 'red',
+        marginVertical: 5,
+        fontWeight: 'bold',
+        width: 150,
+        textAlign: 'center'
     }
 });
