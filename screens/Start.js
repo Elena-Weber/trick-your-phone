@@ -22,7 +22,7 @@ export default Start;
 const styles = StyleSheet.create({
     inputContainer: {
         padding: 20,
-        marginTop: 100,
+        marginTop: 50,
         marginHorizontal: 24,
         borderRadius: 10,
         backgroundColor: 'lightblue',
