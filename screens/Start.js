@@ -3,7 +3,7 @@ import { TextInput, View, StyleSheet, Alert } from 'react-native';
 
 import MainBtn from '../components/MainBtn';
 
-function Start() {
+function Start({onPickNumber}) {
   const [enteredNumber, setEnteredNumber] = useState('');
 
   function numberInputHandler(enteredText) {
@@ -26,7 +26,7 @@ function Start() {
       return;
     }
 
-    console.log('Valid');
+    onPickNumber(chosenNumber);
   }
 
   return (
