@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Ionicons } from '@expo/vector-icons';
 import { View, StyleSheet, Alert } from 'react-native';
 import Title from '../components/ui/Title';
 import NumberContainer from '../components/game/NumberContainer';
@@ -59,10 +60,14 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
                 </Instruction>
                 <View style={styles.buttonsContainer}>
                     <View style={styles.button}>
-                        <MainBtn onPress={nextGuessHandler.bind(this, 'greater')}>+</MainBtn>
+                        <MainBtn onPress={nextGuessHandler.bind(this, 'greater')}>
+                            <Ionicons name="md-add" size={24} color="black" />
+                        </MainBtn>
                     </View>
                     <View style={styles.button}>
-                        <MainBtn onPress={nextGuessHandler.bind(this, 'less')}>-</MainBtn>
+                        <MainBtn onPress={nextGuessHandler.bind(this, 'less')}>
+                            <Ionicons name="md-remove" size={24} color="black" />
+                        </MainBtn>
                     </View>
                 </View>
             </Card>
