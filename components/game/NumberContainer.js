@@ -23,11 +23,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 36,
-        fontWeight: 'bold',
-        color: Colors.secondaryLight,
-        // textAlign: 'center',
-        // borderWidth: 2,
-        // borderColor: Colors.secondaryLight,
-        // padding: 12
+        fontFamily: 'OpenSansBold',
+        color: Colors.secondaryLight
     }
 })
