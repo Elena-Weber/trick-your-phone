@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { TextInput, View, StyleSheet, Alert } from 'react-native';
 import Colors from '../util/colors';
 
-import MainBtn from '../components/MainBtn';
+import MainBtn from '../components/ui/MainBtn';
 
 function Start({onPickNumber}) {
   const [enteredNumber, setEnteredNumber] = useState('');

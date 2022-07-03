@@ -1,5 +1,5 @@
 import { Text, StyleSheet } from 'react-native';
-import Colors from '../util/colors';
+import Colors from '../../util/colors';
 
 function Title({children}) { // accepts everything from its parent on Game
     return (
