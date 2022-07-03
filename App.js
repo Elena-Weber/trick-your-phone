@@ -2,21 +2,32 @@ import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, ImageBackground, SafeAreaView } from 'react-native';
 import Start from './screens/Start';
+import End from './screens/End';
 import Game from './screens/Game';
 import Colors from './util/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
+  const [gameOver, setGameOver] = useState(true);
 
   function pickedNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
+    setGameOver(false);
   }
   
+  function gameOverHandler() {
+    setGameOver(true);
+  }
+
   let startScreen = <Start onPickNumber={pickedNumberHandler} />
 
   if (userNumber) {
-    startScreen = <Game userNumber={userNumber} />
+    startScreen = <Game userNumber={userNumber} onGameOver={gameOverHandler}/>
+  }
+
+  if (gameOver && userNumber) {
+    startScreen = <End></End>
   }
 
   return (
@@ -31,7 +42,7 @@ export default function App() {
         >
           <StatusBar style="auto" />
           <SafeAreaView style={styles.container}>
-            <Text style={styles.greeting}>Trick your phone</Text>
+            {/* <Text style={styles.greeting}>Trick your phone</Text> */}
             {startScreen}
           </SafeAreaView>
         </ImageBackground>
@@ -46,10 +57,10 @@ const styles = StyleSheet.create({
   backgroundImageStyle: {
     opacity: 0.15 // = 15%
   },
-  greeting: {
-    marginTop: 100,
-    textAlign: 'center',
-    fontSize: 30,
-    fontWeight: 'bold'
-  }
+  // greeting: {
+  //   marginTop: 100,
+  //   textAlign: 'center',
+  //   fontSize: 30,
+  //   fontWeight: 'bold'
+  // }
 });

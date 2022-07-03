@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { TextInput, View, StyleSheet, Alert } from 'react-native';
+import { TextInput, Text, View, StyleSheet, Alert } from 'react-native';
 import Colors from '../util/colors';
 
 import MainBtn from '../components/ui/MainBtn';
+import Title from '../components/ui/Title';
+import Card from '../components/ui/Card';
+import Instruction from '../components/ui/Instruction';
 
 function Start({onPickNumber}) {
   const [enteredNumber, setEnteredNumber] = useState('');
@@ -31,24 +34,28 @@ function Start({onPickNumber}) {
   }
 
   return (
-    <View style={styles.inputContainer}>
-      <TextInput
-        style={styles.numberInput}
-        maxLength={2}
-        keyboardType="number-pad"
-        autoCapitalize="none"
-        autoCorrect={false}
-        onChangeText={numberInputHandler}
-        value={enteredNumber}
-      />
-      <View style={styles.buttonsContainer}>
-        <View style={styles.buttonContainer}>
-          <MainBtn onPress={resetInputHandler}>Reset</MainBtn>
+    <View style={styles.container}>
+      <Title style={styles.greeting}>Trick your phone</Title>
+      <Card>
+        <Instruction>Enter your number from 1 to 100</Instruction>
+        <TextInput
+          style={styles.numberInput}
+          maxLength={2}
+          keyboardType="number-pad"
+          autoCapitalize="none"
+          autoCorrect={false}
+          onChangeText={numberInputHandler}
+          value={enteredNumber}
+        />
+        <View style={styles.buttonsContainer}>
+          <View style={styles.button}>
+            <MainBtn onPress={resetInputHandler}  >Reset</MainBtn>
+          </View>
+          <View style={styles.button}>
+            <MainBtn onPress={confirmInputHandler}  >Confirm</MainBtn>
+          </View>
         </View>
-        <View style={styles.buttonContainer}>
-          <MainBtn onPress={confirmInputHandler}>Confirm</MainBtn>
-        </View>
-      </View>
+      </Card>
     </View>
   );
 }
@@ -56,19 +63,10 @@ function Start({onPickNumber}) {
 export default Start;
 
 const styles = StyleSheet.create({
-  inputContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 100,
-    marginHorizontal: 24,
-    padding: 16,
-    backgroundColor: Colors.primaryDark,
-    borderRadius: 8,
-    elevation: 4,
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 6,
-    shadowOpacity: 0.25,
+  container: {
+    flex: 1,
+    marginTop: 100, 
+    alignItems: 'center'
   },
   numberInput: {
     height: 50,
@@ -84,7 +82,13 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
   },
-  buttonContainer: {
+  button: {
     flex: 1,
   },
+  greeting: {
+    marginTop: 100,
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: 'bold'
+  }
 });
