@@ -12,6 +12,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 export default function App() {
   const [userNumber, setUserNumber] = useState();
   const [gameOver, setGameOver] = useState(true);
+  const [attemptsNumber, setAttemptsNumber] = useState(0);
 
   const [loaded] = useFonts({
     'open-sans-regular': require('./assets/fonts/OpenSans-Regular.ttf'),
@@ -31,14 +32,26 @@ export default function App() {
     setGameOver(true);
   }
 
+  function newGameHandler() {
+    setUserNumber(null);
+    setAttemptsNumber(0);
+  }
+
   let startScreen = <Start onPickNumber={pickedNumberHandler} />
 
   if (userNumber) {
-    startScreen = <Game userNumber={userNumber} onGameOver={gameOverHandler}/>
+    startScreen = <Game
+      userNumber={userNumber}
+      onGameOver={gameOverHandler}
+    />
   }
 
   if (gameOver && userNumber) {
-    startScreen = <End></End>
+    startScreen = <End
+      attemptsNumber={attemptsNumber}
+      userNumber={userNumber}
+      onNewGame={newGameHandler}
+    />
   }
 
   return (
