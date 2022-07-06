@@ -12,7 +12,7 @@ function End({attemptsNumber, userNumber, onNewGame}) {
             </View>
             <Text style={styles.summaryText}>The phone needed <Text style={styles.highlightText}>{attemptsNumber}</Text> attempts to guess your number, and it's <Text style={styles.highlightText}>{userNumber}</Text>!</Text>
             <View>
-                <MainBtn>New Game</MainBtn>
+                <MainBtn onPress={onNewGame}>New Game</MainBtn>
             </View>
         </View>
     )

@@ -28,7 +28,7 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
 
     useEffect(() => {
         if (currentGuess === userNumber) {
-            onGameOver();
+            onGameOver(attemptsNumber.length);
         }
     }, [currentGuess, userNumber, onGameOver]); // monitors these 3 things
 
@@ -82,7 +82,7 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
                     </View>
                 </View>
             </Card>
-            <View>
+            <View style={styles.listContainer}>
                 {/* {attemptsNumber.map(attempt => <Text key={attempt}>{attempt}</Text>)} */}
                 <FlatList
                     data={attemptsNumber}
@@ -109,5 +109,9 @@ const styles = StyleSheet.create({
     },
     instructionText: {
         marginBottom: 10
+    },
+    listContainer: {
+        flex: 1,
+        padding: 16
     }
 })

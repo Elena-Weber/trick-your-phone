@@ -28,8 +28,9 @@ export default function App() {
     setGameOver(false);
   }
   
-  function gameOverHandler() {
+  function gameOverHandler(numberOfAttempts) {
     setGameOver(true);
+    setAttemptsNumber(numberOfAttempts);
   }
 
   function newGameHandler() {
