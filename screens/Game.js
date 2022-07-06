@@ -6,6 +6,7 @@ import NumberContainer from '../components/game/NumberContainer';
 import MainBtn from '../components/ui/MainBtn';
 import Card from '../components/ui/Card';
 import Instruction from '../components/ui/Instruction';
+import GuessLogItem from '../components/game/GuessLogItem';
 
 function generateRandomBetween(min, max, exclude) {
     const randomNumber = Math.floor(Math.random() * (max - min)) + min;
@@ -54,6 +55,8 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
         setAttemptsNumber(prevAttemptsNumber => [newRandomNumber, ...prevAttemptsNumber]);
     }
 
+    const guessAttemptsListLength = attemptsNumber.length;
+
     return (
         <View style={styles.screen}>
             <Title>
@@ -84,7 +87,7 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
                 <FlatList
                     data={attemptsNumber}
                     keyExtractor={(item) => item}
-                    renderItem={(itemData) => <Text>{itemData.item}</Text>}
+                    renderItem={(itemData) => <GuessLogItem attemptNumber={guessAttemptsListLength - itemData.index} guess={itemData.item} />}
                 />
             </View>
         </View>
