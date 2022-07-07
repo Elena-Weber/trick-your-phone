@@ -13,11 +13,11 @@ export default NumberContainer;
 
 const styles = StyleSheet.create({
     container: {
-        borderWidth: 4,
-        borderColor: Colors.secondaryLight,
-        padding: 24,
-        margin: 24,
-        borderRadius: 8,
+        // borderWidth: 4,
+        // borderColor: Colors.secondaryLight,
+        padding: 8,
+        // marginHorizontal: 135,
+        borderRadius: 35,
         alignItems: 'center',
         justifyContent: 'center'
     },

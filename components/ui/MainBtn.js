@@ -21,12 +21,10 @@ const styles = StyleSheet.create({
     buttonsViewContainer: {
         borderRadius: 10,
         margin: 5,
-        overflow: 'hidden',
-        // textAlign: 'center',
-        // justifyContent: 'center'
+        overflow: 'hidden'
     },
     buttonsPressableContainer: {
-        backgroundColor: Colors.primaryLight,
+        backgroundColor: Colors.secondaryDark,
         paddingVertical: 10,
         paddingHorizontal: 15,
         elevation: 3, // shadow for Android, from 0 to ...
@@ -36,8 +34,9 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
     },
     buttonText: {
-        color: 'black',
-        textAlign: 'center'
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 18
     },
     pressed: {
         opacity: 0.75

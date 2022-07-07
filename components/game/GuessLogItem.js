@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
     listItem: {
         borderColor: Colors.primaryDark,
         borderWidth: 1,
-        borderRadius: 40,
-        padding: 12,
-        marginVertical: 8,
-        backgroundColor: Colors.secondaryLight,
+        borderRadius: 15,
+        padding: 10,
+        marginVertical: 7,
+        backgroundColor: Colors.primaryLight,
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3
     },
     itemText: {
-        fontFamily: 'open-sans-regular'
+        fontFamily: 'open-sans-regular',
+        fontSize: 16
     }
 })

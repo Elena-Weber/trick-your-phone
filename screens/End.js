@@ -8,9 +8,9 @@ function End({attemptsNumber, userNumber, onNewGame}) {
         <View style={styles.container}>
             <Title>Game over!</Title>
             <View style={styles.imageContainer}>
-                <Image source={{uri: 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FtZSUyMG92ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'}}  style={styles.image}></Image>
+                <Image source={{uri: 'https://images.unsplash.com/photo-1637635753380-20bf6f46ede0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'}}  style={styles.image}></Image>
             </View>
-            <Text style={styles.summaryText}>The phone needed <Text style={styles.highlightText}>{attemptsNumber}</Text> attempts to guess your number, and it's <Text style={styles.highlightText}>{userNumber}</Text>!</Text>
+            <Text style={styles.summaryText}>Your phone needed <Text style={styles.highlightText}>{attemptsNumber}</Text> attempts to guess your number, and it's <Text style={styles.highlightText}>{userNumber}</Text>!</Text>
             <View>
                 <MainBtn onPress={onNewGame}>New Game</MainBtn>
             </View>
@@ -22,29 +22,29 @@ export default End;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 1,
         padding: 20,
         justifyContent: 'center',
         alignItems: 'center'
     },
     imageContainer: {
-        width: 300,
-        height: 300,
-        borderRadius: 150,
+        width: 240,
+        height: 250,
+        borderRadius: 120,
         borderWidth: 1,
         borderColor: Colors.primaryLight,
         overflow: 'hidden',
-        margin: 39
+        margin: 20
     },
     image: {
-        width: "100%",
+        width: '100%',
         height: '100%'
     },
     summaryText: {
         fontFamily: 'open-sans',
         fontSize: 24,
         textAlign: 'center',
-        marginBottom: 24
+        marginBottom: 20
     },
     highlightText: {
         fontFamily: 'OpenSansBold',

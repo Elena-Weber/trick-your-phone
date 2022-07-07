@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { TextInput, Text, View, StyleSheet, Alert } from 'react-native';
+import { TextInput, View, StyleSheet, Alert } from 'react-native';
 import Colors from '../util/colors';
-
 import MainBtn from '../components/ui/MainBtn';
-import Title from '../components/ui/Title';
 import Card from '../components/ui/Card';
 import Instruction from '../components/ui/Instruction';
 
@@ -35,9 +33,8 @@ function Start({onPickNumber}) {
 
   return (
     <View style={styles.container}>
-      <Title style={styles.greeting}>Trick your phone</Title>
       <Card>
-        <Instruction>Enter your number from 1 to 100</Instruction>
+        <Instruction>Type your number (from 1 to 100)</Instruction>
         <TextInput
           style={styles.numberInput}
           maxLength={2}
@@ -49,10 +46,10 @@ function Start({onPickNumber}) {
         />
         <View style={styles.buttonsContainer}>
           <View style={styles.button}>
-            <MainBtn onPress={resetInputHandler}  >Reset</MainBtn>
+            <MainBtn onPress={resetInputHandler}>Reset</MainBtn>
           </View>
           <View style={styles.button}>
-            <MainBtn onPress={confirmInputHandler}  >Confirm</MainBtn>
+            <MainBtn onPress={confirmInputHandler}>Confirm</MainBtn>
           </View>
         </View>
       </Card>
@@ -64,8 +61,7 @@ export default Start;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: 100, 
+    // flex: 1,
     alignItems: 'center'
   },
   numberInput: {
@@ -75,7 +71,7 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.secondaryLight,
     borderBottomWidth: 2,
     color: Colors.secondaryLight,
-    marginVertical: 8,
+    marginVertical: 10,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -83,12 +79,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   button: {
-    flex: 1,
-  },
-  greeting: {
-    marginTop: 100,
-    textAlign: 'center',
-    fontSize: 30,
-    fontWeight: 'bold'
+    flex: 1
   }
 });

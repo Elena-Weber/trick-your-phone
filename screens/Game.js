@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { View, StyleSheet, Text, FlatList, Alert } from 'react-native';
+import { View, StyleSheet, FlatList, Alert } from 'react-native';
 import Title from '../components/ui/Title';
 import NumberContainer from '../components/game/NumberContainer';
 import MainBtn from '../components/ui/MainBtn';
@@ -60,7 +60,7 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
     return (
         <View style={styles.screen}>
             <Title>
-                Opponent's Guess
+                Your Phone's Guess is:
             </Title>
             <NumberContainer>
                 {currentGuess}
@@ -72,12 +72,12 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
                 <View style={styles.buttonsContainer}>
                     <View style={styles.button}>
                         <MainBtn onPress={nextGuessHandler.bind(this, 'greater')}>
-                            <Ionicons name="md-add" size={24} color="black" />
+                            <Ionicons name="md-add" size={27} color="white" />
                         </MainBtn>
                     </View>
                     <View style={styles.button}>
                         <MainBtn onPress={nextGuessHandler.bind(this, 'less')}>
-                            <Ionicons name="md-remove" size={24} color="black" />
+                            <Ionicons name="md-remove" size={26} color="white" />
                         </MainBtn>
                     </View>
                 </View>
@@ -99,7 +99,7 @@ export default Game;
 const styles = StyleSheet.create({
     screen: {
         flex: 1, // takes all available space
-        padding: 24
+        padding: 20
     },
     buttonsContainer: {
         flexDirection: 'row',

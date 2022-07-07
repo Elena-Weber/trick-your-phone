@@ -11,12 +11,12 @@ export default Title;
 
 const styles = StyleSheet.create({
     title: {
-        fontSize: 28,
+        fontSize: 22,
         color: Colors.secondaryLight,
         textAlign: 'center',
-        borderWidth: 2,
-        borderColor: Colors.secondaryLight,
-        padding: 12,
+        // borderWidth: 2,
+        // borderColor: Colors.secondaryLight,
+        padding: 10,
         fontFamily: 'OpenSansBold'
     }
 })
