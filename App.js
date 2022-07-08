@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     padding: 10,
     backgroundColor: Colors.primaryDark,
-    fontFamily: 'OpenSansBold'
+    fontFamily: 'OpenSansBold',
+    maxWidth: '95%'
   }
 })

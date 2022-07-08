@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 import Colors from '../util/colors';
 import Title from '../components/ui/Title';
 import MainBtn from '../components/ui/MainBtn';
@@ -23,6 +23,8 @@ function End({attemptsNumber, userNumber, onNewGame}) {
 
 export default End;
 
+const deviceWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
     container: {
         padding: 20,
@@ -30,9 +32,9 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     imageContainer: {
-        width: 200,
-        height: 200,
-        borderRadius: 100,
+        width: deviceWidth < 380 ? 100 : 200,
+        height: deviceWidth < 380 ? 100 : 200,
+        borderRadius: deviceWidth < 380 ? 50 : 100,
         borderWidth: 1,
         borderColor: Colors.primaryLight,
         overflow: 'hidden',

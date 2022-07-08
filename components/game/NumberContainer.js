@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import Colors from '../../util/colors';
 
 function NumberContainer({children}) { // accepts everything from its parent on Game
@@ -11,11 +11,13 @@ function NumberContainer({children}) { // accepts everything from its parent on 
 
 export default NumberContainer;
 
+const deviceWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
     container: {
         borderWidth: 1,
         borderColor: Colors.secondaryLight,
-        padding: 8,
+        padding: deviceWidth < 380 ? 7 : 8,
         marginHorizontal: 130,
         margin: 10,
         borderRadius: 25,
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.primaryDark
     },
     text: {
-        fontSize: 36,
+        fontSize: deviceWidth < 380 ? 34 : 36,
         fontFamily: 'OpenSansBold',
         color: Colors.white
     }
