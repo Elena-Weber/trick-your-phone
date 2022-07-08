@@ -22,7 +22,7 @@ let minLimit = 1;
 let maxLimit = 100;
 
 function Game({userNumber, onGameOver}) { // equals props.userNumber
-    const initialGuess = generateRandomBetween(1, 100, userNumber);
+    const initialGuess = generateRandomBetween(1, 100, userNumber); // hard-coded because otherwise it errors out
     const [currentGuess, setCurrentGuess] = useState(initialGuess);
     const [attemptsNumber, setAttemptsNumber] = useState([initialGuess]);
 
@@ -77,7 +77,7 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
                     </View>
                     <View style={styles.button}>
                         <MainBtn onPress={nextGuessHandler.bind(this, 'less')}>
-                            <Ionicons name="md-remove" size={26} color="white" />
+                            <Ionicons name="md-remove" size={27} color="white" />
                         </MainBtn>
                     </View>
                 </View>
@@ -99,7 +99,7 @@ export default Game;
 const styles = StyleSheet.create({
     screen: {
         flex: 1, // takes all available space
-        padding: 20
+        padding: 15
     },
     buttonsContainer: {
         flexDirection: 'row',

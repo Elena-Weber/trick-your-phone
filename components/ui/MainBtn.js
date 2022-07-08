@@ -34,11 +34,11 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
     },
     buttonText: {
-        color: 'white',
+        color:  Colors.white,
         textAlign: 'center',
-        fontSize: 18
+        fontSize: 22
     },
     pressed: {
         opacity: 0.75
     }
-});
+})

@@ -1,7 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 import Colors from '../../util/colors';
 
-function Card({children}) { // accepts buttons from its child component in Start.js
+function Card({children}) { // accepts buttons from its parent component in Start.js
     return (
     <View style={styles.inputContainer}>
         {children}

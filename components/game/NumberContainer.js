@@ -13,17 +13,19 @@ export default NumberContainer;
 
 const styles = StyleSheet.create({
     container: {
-        // borderWidth: 4,
-        // borderColor: Colors.secondaryLight,
+        borderWidth: 1,
+        borderColor: Colors.secondaryLight,
         padding: 8,
-        // marginHorizontal: 135,
-        borderRadius: 35,
+        marginHorizontal: 130,
+        margin: 10,
+        borderRadius: 25,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: Colors.primaryDark
     },
     text: {
         fontSize: 36,
         fontFamily: 'OpenSansBold',
-        color: Colors.secondaryLight
+        color: Colors.white
     }
 })

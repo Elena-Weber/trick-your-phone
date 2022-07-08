@@ -57,14 +57,15 @@ export default function App() {
 
   return (
     <LinearGradient
-      colors={[Colors.primaryDark, Colors.primaryLight]}
+      colors={[Colors.primaryDark, "white"]}
       style={styles.container} >
         <ImageBackground
-          source={{uri: 'https://images.unsplash.com/photo-1567005238523-59ac3bcb79a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'}}
+          source={require('./assets/bg.jpg')}
           imageStyle={styles.backgroundImageStyle}
           style={styles.container}
           resizeMode="cover" // so that it always resizes
         >
+          {/* there is time, battery and etc there */}
           <StatusBar style="light" />
           <SafeAreaView style={styles.container}>
             <Text style={styles.greeting}>Trick your phone</Text>
@@ -80,18 +81,19 @@ const styles = StyleSheet.create({
     flex: 1 // occupies whole screen
   },
   backgroundImageStyle: {
-    opacity: 0.15 // = 15%
+    opacity: 0.20 // = 20%
   },
   greeting: {
     marginTop: 90,
     marginHorizontal: 50,
-    marginBottom: 20,
+    marginBottom: 10,
     textAlign: 'center',
     fontSize: 30,
     fontWeight: 'bold',
-    color: Colors.secondaryLight,
-    borderColor: Colors.secondary,
+    color: Colors.white,
+    borderColor: Colors.primaryLight,
     borderWidth: 3,
-    padding: 10
+    padding: 10,
+    backgroundColor: Colors.primaryDark
   }
-});
+})

@@ -8,7 +8,10 @@ function End({attemptsNumber, userNumber, onNewGame}) {
         <View style={styles.container}>
             <Title>Game over!</Title>
             <View style={styles.imageContainer}>
-                <Image source={{uri: 'https://images.unsplash.com/photo-1637635753380-20bf6f46ede0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'}}  style={styles.image}></Image>
+                <Image
+                    source={{uri: 'https://www.freevector.com/uploads/vector/preview/4559/FreeVector-Cup-Vector.jpg'}}
+                    style={styles.image}>
+                </Image>
             </View>
             <Text style={styles.summaryText}>Your phone needed <Text style={styles.highlightText}>{attemptsNumber}</Text> attempts to guess your number, and it's <Text style={styles.highlightText}>{userNumber}</Text>!</Text>
             <View>
@@ -22,15 +25,14 @@ export default End;
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
         padding: 20,
         justifyContent: 'center',
         alignItems: 'center'
     },
     imageContainer: {
-        width: 240,
-        height: 250,
-        borderRadius: 120,
+        width: 200,
+        height: 200,
+        borderRadius: 100,
         borderWidth: 1,
         borderColor: Colors.primaryLight,
         overflow: 'hidden',
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     },
     summaryText: {
         fontFamily: 'open-sans',
-        fontSize: 24,
+        fontSize: 23,
         textAlign: 'center',
         marginBottom: 20
     },

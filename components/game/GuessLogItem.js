@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         padding: 10,
         marginVertical: 7,
-        backgroundColor: Colors.primaryLight,
+        backgroundColor: Colors.secondaryLight,
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
     },
     itemText: {
         fontFamily: 'open-sans-regular',
-        fontSize: 16
+        fontSize: 17
     }
 })

@@ -61,14 +61,13 @@ export default Start;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     alignItems: 'center'
   },
   numberInput: {
     height: 50,
     width: 50,
     fontSize: 32,
-    borderBottomColor: Colors.secondaryLight,
+    borderBottomColor: Colors.white,
     borderBottomWidth: 2,
     color: Colors.secondaryLight,
     marginVertical: 10,
@@ -81,4 +80,4 @@ const styles = StyleSheet.create({
   button: {
     flex: 1
   }
-});
+})
