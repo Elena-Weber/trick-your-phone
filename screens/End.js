@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     summaryText: {
-        fontFamily: 'open-sans',
-        fontSize: 23,
+        fontFamily: 'open-sans-regular',
+        fontSize: 22,
         textAlign: 'center',
         marginBottom: 20
     },

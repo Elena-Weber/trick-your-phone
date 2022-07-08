@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     instruction: {
         color: Colors.white,
         textAlign: 'center',
-        fontSize: 30,
+        fontSize: 28,
         fontFamily: 'open-sans-regular'
     }
 })

@@ -67,7 +67,7 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
             </NumberContainer>
             <Card>
                 <Instruction parentStyle={styles.instructionText}>
-                    Greater or less?
+                    Is your number greater or less?
                 </Instruction>
                 <View style={styles.buttonsContainer}>
                     <View style={styles.button}>
