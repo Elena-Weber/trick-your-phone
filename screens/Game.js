@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { View, StyleSheet, FlatList, Alert } from 'react-native';
+import { View, StyleSheet, FlatList, Alert, useWindowDimensions } from 'react-native';
 import Title from '../components/ui/Title';
 import NumberContainer from '../components/game/NumberContainer';
 import MainBtn from '../components/ui/MainBtn';
@@ -25,6 +25,7 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
     const initialGuess = generateRandomBetween(1, 100, userNumber); // hard-coded because otherwise it errors out
     const [currentGuess, setCurrentGuess] = useState(initialGuess);
     const [attemptsNumber, setAttemptsNumber] = useState([initialGuess]);
+    const {width, height} = useWindowDimensions();
 
     useEffect(() => {
         if (currentGuess === userNumber) {
@@ -56,12 +57,9 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
     }
 
     const guessAttemptsListLength = attemptsNumber.length;
-
-    return (
-        <View style={styles.screen}>
-            <Title>
-                Your Phone's Guess is:
-            </Title>
+    
+    let content = (
+        <>
             <NumberContainer>
                 {currentGuess}
             </NumberContainer>
@@ -82,6 +80,37 @@ function Game({userNumber, onGameOver}) { // equals props.userNumber
                     </View>
                 </View>
             </Card>
+        </>
+    )
+
+    if (width > 500) {
+        content = (
+            <>
+                <View style={styles.buttonsContainerWide}>
+                    <View style={styles.button}>
+                        <MainBtn onPress={nextGuessHandler.bind(this, 'greater')}>
+                            <Ionicons name="md-add" size={27} color="white" />
+                        </MainBtn>
+                    </View>
+                    <NumberContainer>
+                        {currentGuess}
+                    </NumberContainer>
+                    <View style={styles.button}>
+                        <MainBtn onPress={nextGuessHandler.bind(this, 'less')}>
+                            <Ionicons name="md-remove" size={27} color="white" />
+                        </MainBtn>
+                    </View>
+                </View>
+            </>
+        )
+    }
+
+    return (
+        <View style={styles.screen}>
+            <Title>
+                Your Phone's Guess is:
+            </Title>
+            {content}
             <View style={styles.listContainer}>
                 {/* {attemptsNumber.map(attempt => <Text key={attempt}>{attempt}</Text>)} */}
                 <FlatList
@@ -103,6 +132,10 @@ const styles = StyleSheet.create({
     },
     buttonsContainer: {
         flexDirection: 'row',
+    },
+    buttonsContainerWide: {
+        flexDirection: 'row',
+        alignItems: 'center',
     },
     button: {
         flex: 1,
