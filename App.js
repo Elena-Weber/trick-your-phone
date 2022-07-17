@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { Entypo } from '@expo/vector-icons';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
-import { StyleSheet, ImageBackground, Text, SafeAreaView, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, ImageBackground, Text, SafeAreaView, View, useWindowDimensions, Platform } from 'react-native';
 import Start from './screens/Start';
 import End from './screens/End';
 import Game from './screens/Game';
@@ -89,7 +89,7 @@ export default function App() {
     />
   }
 
-  const marginTopDistance = height < 380 ? 30 : 90;
+  const marginTopDistance = height < 380 ? 40 : 90;
 
   return (
     <View onLayout={onLayoutRootView} style={{flex: 1}}>
@@ -130,7 +130,8 @@ const styles = StyleSheet.create({
     fontSize: 31,
     fontWeight: 'bold',
     color: Colors.white,
-    borderColor: Colors.primaryLight,
+    // borderColor: Platform.OS === 'ios' ? Colors.primaryLight : Colors.secondaryLight,
+    borderColor: Platform.select({ios: Colors.primaryLight, android: Colors.secondaryLight}),
     borderWidth: 3,
     padding: 10,
     backgroundColor: Colors.primaryDark,
