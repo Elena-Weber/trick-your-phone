@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { Entypo } from '@expo/vector-icons';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
-import { StyleSheet, ImageBackground, Text, SafeAreaView, View } from 'react-native';
+import { StyleSheet, ImageBackground, Text, SafeAreaView, View, useWindowDimensions } from 'react-native';
 import Start from './screens/Start';
 import End from './screens/End';
 import Game from './screens/Game';
@@ -20,6 +20,8 @@ export default function App() {
     'open-sans-regular': require('./assets/fonts/OpenSans-Regular.ttf'),
     OpenSansBold: require('./assets/fonts/OpenSans-Bold.ttf')
   });
+
+  const { width, height } = useWindowDimensions();
 
   useEffect(() => {
     async function prepare() {
@@ -87,6 +89,8 @@ export default function App() {
     />
   }
 
+  const marginTopDistance = height < 380 ? 30 : 90;
+
   return (
     <View onLayout={onLayoutRootView} style={{flex: 1}}>
       <LinearGradient
@@ -101,7 +105,7 @@ export default function App() {
             {/* there is time, battery and etc there */}
             <StatusBar style="light" />
             <SafeAreaView style={styles.container}>
-              <Text style={styles.greeting}>Trick your phone <Entypo name="mobile" size={30} color="white" /></Text>
+              <Text style={[styles.greeting, {marginTop: marginTopDistance}]}>Trick your phone <Entypo name="mobile" size={30} color="white" /></Text>
               {startScreen}
             </SafeAreaView>
           </ImageBackground>
@@ -118,7 +122,7 @@ const styles = StyleSheet.create({
     opacity: 0.20 // = 20%
   },
   greeting: {
-    marginTop: 90,
+    // marginTop: 90,
     marginHorizontal: 30,
     marginBottom: 10,
     textAlign: 'center',
