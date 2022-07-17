@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInput, View, StyleSheet, Alert } from 'react-native';
+import { TextInput, View, StyleSheet, Alert, KeyboardAvoidingView, ScrollView } from 'react-native';
 import Colors from '../util/colors';
 import MainBtn from '../components/ui/MainBtn';
 import Card from '../components/ui/Card';
@@ -32,34 +32,41 @@ function Start({onPickNumber}) {
   }
 
   return (
-    <View style={styles.container}>
-      <Card>
-        <Instruction>Type your number (from 1 to 100)</Instruction>
-        <TextInput
-          style={styles.numberInput}
-          maxLength={2}
-          keyboardType="number-pad"
-          autoCapitalize="none"
-          autoCorrect={false}
-          onChangeText={numberInputHandler}
-          value={enteredNumber}
-        />
-        <View style={styles.buttonsContainer}>
-          <View style={styles.button}>
-            <MainBtn onPress={resetInputHandler}>Reset</MainBtn>
-          </View>
-          <View style={styles.button}>
-            <MainBtn onPress={confirmInputHandler}>Confirm</MainBtn>
-          </View>
-        </View>
-      </Card>
-    </View>
+    <ScrollView style={styles.screen}>
+      <KeyboardAvoidingView style={styles.screen} behavior="position">
+        <View style={styles.container}>
+          <Card>
+            <Instruction>Type your number (from 1 to 100)</Instruction>
+            <TextInput
+              style={styles.numberInput}
+              maxLength={2}
+              keyboardType="number-pad"
+              autoCapitalize="none"
+              autoCorrect={false}
+              onChangeText={numberInputHandler}
+              value={enteredNumber}
+            />
+            <View style={styles.buttonsContainer}>
+              <View style={styles.button}>
+                <MainBtn onPress={resetInputHandler}>Reset</MainBtn>
+              </View>
+              <View style={styles.button}>
+                <MainBtn onPress={confirmInputHandler}>Confirm</MainBtn>
+              </View>
+            </View>
+          </Card>
+      </View>
+    </KeyboardAvoidingView>
+  </ScrollView>
   );
 }
 
 export default Start;
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1
+  },
   container: {
     alignItems: 'center'
   },

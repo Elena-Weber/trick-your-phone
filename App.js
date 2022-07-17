@@ -95,20 +95,21 @@ export default function App() {
     <View onLayout={onLayoutRootView} style={{flex: 1}}>
       <LinearGradient
         colors={[Colors.primaryDark, Colors.white]}
-        style={styles.container} >
-          <ImageBackground
-            source={require('./assets/bg.jpg')}
-            imageStyle={styles.backgroundImageStyle}
-            style={styles.container}
-            resizeMode="cover" // so that it always resizes
-          >
-            {/* there is time, battery and etc there */}
-            <StatusBar style="light" />
-            <SafeAreaView style={styles.container}>
-              <Text style={[styles.greeting, {marginTop: marginTopDistance}]}>Trick your phone <Entypo name="mobile" size={30} color="white" /></Text>
-              {startScreen}
-            </SafeAreaView>
-          </ImageBackground>
+        style={styles.container}
+      >
+        <ImageBackground
+          source={require('./assets/bg.jpg')}
+          imageStyle={styles.backgroundImageStyle}
+          style={styles.container}
+          resizeMode="cover" // so that it always resizes
+        >
+          {/* there is time, battery and etc there */}
+          <StatusBar style="light" />
+          <SafeAreaView style={styles.container}>
+            <Text style={[styles.greeting, {marginTop: marginTopDistance}]}>Trick your phone <Entypo name="mobile" size={30} color="white" /></Text>
+            {startScreen}
+          </SafeAreaView>
+        </ImageBackground>
       </LinearGradient>
     </View>
   );
