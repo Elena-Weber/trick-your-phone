@@ -6,11 +6,17 @@ import MainBtn from '../components/ui/MainBtn';
 function End({attemptsNumber, userNumber, onNewGame}) {
     const {width, height} = useWindowDimensions();
     let imgSize = 200;
+    let imgMargin = 20;
+    let containerPadding = 20;
     if (width < 380) {
         imgSize = 100;
+        imgMargin = 10;
+        containerPadding = 5;
     }
     if (height < 400) {
-        imgSize = 80;
+        imgSize = 50;
+        imgMargin = 5;
+        containerPadding = 1;
     }
     const imgStyle = {
         width: imgSize,
@@ -20,9 +26,9 @@ function End({attemptsNumber, userNumber, onNewGame}) {
 
     return (
         <ScrollView style={styles.screen}>
-            <View style={styles.container}>
+            <View style={[styles.container, {padding: containerPadding}]}>
                 <Title>Game over!</Title>
-                <View style={[styles.imageContainer, imgStyle]}>
+                <View style={[styles.imageContainer, imgStyle, {margin: imgMargin}]}>
                     <Image
                         source={{uri: 'https://www.freevector.com/uploads/vector/preview/4559/FreeVector-Cup-Vector.jpg'}}
                         style={styles.image}>
@@ -47,7 +53,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        padding: 20,
+        // padding: 20,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: Colors.primaryLight,
         overflow: 'hidden',
-        margin: 20
+        // margin: 20
     },
     image: {
         width: '100%',
