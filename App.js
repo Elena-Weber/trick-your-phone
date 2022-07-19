@@ -106,7 +106,7 @@ export default function App() {
           {/* there is time, battery and etc there */}
           <StatusBar style="light" />
           <SafeAreaView style={styles.container}>
-            <Text style={[styles.greeting, {marginTop: marginTopDistance}]}>Trick your phone <Entypo name="mobile" size={30} color="white" /></Text>
+            <Text style={[styles.greeting, {marginTop: marginTopDistance}]}>Trick your phone <Entypo name="mobile" size={26} color="white" /></Text>
             {startScreen}
           </SafeAreaView>
         </ImageBackground>
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     marginBottom: 10,
     textAlign: 'center',
-    fontSize: 31,
+    fontSize: 28,
     fontWeight: 'bold',
     color: Colors.white,
     // borderColor: Platform.OS === 'ios' ? Colors.primaryLight : Colors.secondaryLight,
